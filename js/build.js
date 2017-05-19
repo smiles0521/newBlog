@@ -8,9 +8,9 @@ fs.readdir('./markdown',function(error,files){
     // 修改网页标题
         var publics = fs.readFileSync('./public.html').toString();
         var results = publics.replace('%title%',newName);
-        fs.writeFileSync('html/'+i+'.html',results);
+        fs.writeFileSync('html/'+files[i]+'.html',results);
     // 修改网页内容
-        var public = fs.readFileSync('./html/'+i+'.html').toString();
+        var public = fs.readFileSync('./html/'+files[i]+'.html').toString();
         var result = public.replace('%content%',markdown);
         fs.writeFileSync('html/'+files[i]+'.html',result);
     }
