@@ -12,6 +12,6 @@ fs.readdir('./markdown',function(error,files){
     // 修改网页内容
         var public = fs.readFileSync('./html/'+i+'.html').toString();
         var result = public.replace('%content%',markdown);
-        fs.writeFileSync('html/'+i+'.html',result);
+        fs.writeFileSync('html/'+files[i]+'.html',result);
     }
 })
